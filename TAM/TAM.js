@@ -3,19 +3,17 @@ var vehicles = [];
 var font;
 
 function preload() {
-  font = loadFont("AtlasGrotesk-Regular.otf");
-	fontsize = 32;
+  font = loadFont('Data/AtlasGrotesk-Regular.otf');
 }
 function setup() {
-	// canvas is only the area in which we do our drawing
-  let canvasDefinition = createCanvas(500, 600);
+  // canvas is only the area in which we do our drawing
+  let canvasDefinition = createCanvas(560, 640);
 
-	// textToPoints has 'text', x location in canvas, y location, and font size
-	// creates all of the points from the text passcode
-  var points = font.textToPoints('DENINN.DA', 15, 400,80);
-	
-	
-	//  for each point in the text, create a random start position and a vector to where it needs to end up
+  // textToPoints has 'text', x location in canvas, y location, and font size
+  // creates all of the points from the text passcode
+  var points = font.textToPoints('DENINN. NDA',23,400, 73);
+
+  //  for each point in the text, create a random start position and a vector to where it needs to end up
   for (var i=0; i < points.length; i++){
     var pt = points[i];
     var vehicle = new Vehicle(pt.x,pt.y);
@@ -26,11 +24,10 @@ function setup() {
 
 
 function draw() {
-  background(0);
-	text('HAPPY BIRTHDAY', 150,150);
-	textSize(30);
-	fill(0, 102, 153);
-
+ background(0);
+  text('HAPPY BIRTHDAY', 150,150);
+  textSize(30);
+  fill(0, 102, 153);
 
   for (var i=0; i < vehicles.length; i++){
     var v = vehicles[i];
