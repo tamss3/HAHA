@@ -7,11 +7,11 @@ function preload() {
 }
 function setup() {
   // canvas is only the area in which we do our drawing
-  let canvasDefinition = createCanvas(560, 640);
+  let canvasDefinition = createCanvas(500, 680);
 
   // textToPoints has 'text', x location in canvas, y location, and font size
   // creates all of the points from the text passcode
-  var points = font.textToPoints('DENINN. NDA',23,400, 73);
+  var points = font.textToPoints('DENINN. NDA',10,400, 70);
 
   //  for each point in the text, create a random start position and a vector to where it needs to end up
   for (var i=0; i < points.length; i++){
@@ -25,9 +25,10 @@ function setup() {
 
 function draw() {
  background(0);
-  text('HAPPY BIRTHDAY', 150,150);
-  textSize(30);
-  fill(0, 102, 153);
+  text('HAPPY BIRTHDAY', 75,180);
+  textSize(40);
+  stroke(random(90,255));
+  fill(random(0, 153));
 
   for (var i=0; i < vehicles.length; i++){
     var v = vehicles[i];
